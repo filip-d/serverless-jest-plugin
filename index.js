@@ -93,7 +93,7 @@ class ServerlessJestPlugin {
         BbPromise.bind(this)
           .then(() => runTests(this.serverless, this.options, this.config))
           .catch((err) => {
-            if (err.success === false) {
+            if (err.results.success === false) {
               // This is a successful run but with failed tests
               process.exit(1);
             }
